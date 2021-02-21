@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,6 +28,11 @@ class InfoFragment : Fragment() {
         infoViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        var view = root.findViewById<WebView>(R.id.info_webview)
+        view.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+
+        view.loadUrl("https://playeternalreturn.com/ko/category/patch-notes-kr/");
         return root
     }
+
 }
