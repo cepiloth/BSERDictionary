@@ -1,4 +1,4 @@
-package kr.cepiloth.bserdictionary.ui.information
+package kr.cepiloth.bserdictionary.ui.statics
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kr.cepiloth.bserdictionary.R
 
-class InfoFragment : Fragment() {
+class TotalFragment : Fragment() {
 
-    private lateinit var infoViewModel: InfoViewModel
+    private lateinit var totalViewModel: TotalViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        infoViewModel =
-                ViewModelProvider(this).get(InfoViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_information, container, false)
-        val textView: TextView = root.findViewById(R.id.text_info)
-        infoViewModel.text.observe(viewLifecycleOwner, Observer {
+        totalViewModel =
+                ViewModelProvider(this).get(TotalViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_total, container, false)
+        val textView: TextView = root.findViewById(R.id.text_total)
+        totalViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

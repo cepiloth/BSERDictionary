@@ -12,18 +12,18 @@ import kr.cepiloth.bserdictionary.R
 
 class BroadcastFragment : Fragment() {
 
-    private lateinit var galleryViewModel: BroadcastViewModel
+    private lateinit var broadcastViewModel: BroadcastViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
+        broadcastViewModel =
                 ViewModelProvider(this).get(BroadcastViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_broadcast, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = root.findViewById(R.id.text_broadcast)
+        broadcastViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
