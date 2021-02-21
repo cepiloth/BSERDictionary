@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">BSERDictionary</string>
+    <string name="app_name">블서백과사전</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">요망한 Applcation</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">BSER 백과사전</string>
+    <string name="nav_header_subtitle">cepiloth@naver.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
