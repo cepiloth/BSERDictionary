@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,6 +28,12 @@ class TotalFragment : Fragment() {
         totalViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        var view = root.findViewById<WebView>(R.id.total_webview)
+        view.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        view.loadUrl("https://dak.gg/bser");
+
+
         return root
     }
 }

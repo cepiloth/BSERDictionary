@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,6 +29,16 @@ class BroadcastFragment : Fragment() {
         broadcastViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        var view = root.findViewById<WebView>(R.id.broadcast_webview)
+        view.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+
+        // https://developer.android.com/guide/webapps/webview?hl=ko
+        view.settings.javaScriptEnabled = true
+        view.webViewClient = WebViewClient()
+
+        view.loadUrl("https://www.youtube.com/results?search_query=%EB%B8%94%EB%9E%99%EC%84%9C%EB%B0%94%EC%9D%B4%EB%B2%8C");
+
         return root
     }
 }

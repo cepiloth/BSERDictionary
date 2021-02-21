@@ -39,10 +39,7 @@ class MainActivity : AppCompatActivity() {
             setOf(R.id.nav_info,
                 R.id.nav_broadcast,
                 R.id.nav_total,
-                R.id.nav_addon,
-                R.id.nav_home,
-                R.id.nav_gallery,
-                R.id.nav_slideshow), drawerLayout)
+                R.id.nav_addon,), drawerLayout)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
